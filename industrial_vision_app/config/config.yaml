@@ -1,0 +1,22 @@
+camera:
+  type: simulator   # simulator | hikvision | basler | daheng
+  simulator_image_dir: samples
+  width: 1280
+  height: 720
+  fps: 15
+model:
+  backend: dummy     # dummy | ultralytics
+  weights: yolov8n.pt
+  confidence: 0.35
+  device: cpu
+plc:
+  enabled: false
+  host: 192.168.1.10
+  port: 502
+  ok_coil: 0
+  ng_coil: 1
+database:
+  url: sqlite:///records.db
+runtime:
+  save_ng_images: true
+  ng_dir: ng_images
